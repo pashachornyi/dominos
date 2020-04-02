@@ -1,0 +1,29 @@
+{
+  "name": "dominos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:all": "./node_modules/.bin/wdio wdio.conf.js",  
+    "test":"wdio wdio.conf.js --spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pashachornyi/dominos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pashachornyi/dominos/issues"
+  },
+  "homepage": "https://github.com/pashachornyi/dominos#readme",
+  "devDependencies": {
+    "@wdio/cli": "^6.0.13",
+    "@wdio/local-runner": "^6.0.13",
+    "@wdio/mocha-framework": "^6.0.13",
+    "@wdio/spec-reporter": "^6.0.12",
+    "@wdio/sync": "^6.0.12",
+    "chromedriver": "^80.0.1",
+    "wdio-chromedriver-service": "^5.0.2"
+  }
+}
