@@ -1,5 +1,5 @@
 const assert = require('assert')
-
+let location;
 describe('Dominos main page', () => {
     it('should have the right title', () => {
         browser.url('/')
@@ -37,19 +37,35 @@ describe('Dominos main page', () => {
         const chooseOnMap = $('form button:nth-child(2)');
         chooseOnMap.click();
     });
-    it('Choose Dominos shop and add this adress', async() => {
-        browser.pause(3000)
-        
-    //     const pizzaButton = await $('div:nth-child(3) > div:nth-child(25) > img');
-    //    await pizzaButton.click();
+    // it('Choose Dominos shop and add this adress', () => {
     //     browser.pause(3000)
-    //     const scrollToButton = $('app-spin-button:nth-child(2) > button');
-    //     scrollToButton.scrollIntoView();
-        const addButton = await $$('app-spin-button');
-        await addButton[0].click();
+    //     const pizzaButton = $('div:nth-child(3) > div:nth-child(27) > img');
+    //     pizzaButton.click();
+    //     browser.pause(3000)
+    //     const scrollToButton = $$('app-spin-button');
+    //     scrollToButton[1].scrollIntoView();    
+    //     const addButton = $$('app-spin-button');
+    //     addButton[1].click();
+    //     browser.pause(3000)
+    // });
+    it('Scroll to mark', () => {
+        browser.pause(3000)
+        const scrollToButton = $$('app-spin-button');
+        scrollToButton[1].scrollIntoView();    
         browser.pause(3000)
     });
-
-
+    it('Determin location of mark', () => {
+        const mark = $('div:nth-child(3) > div:nth-child(21) > img')
+        location = mark.getLocation();
+        // console.log(location);
+        // browser.pause(3000)
+    });
+    it('Click and move mark', () => {
+        const markPeople = $('.gm-bundled-control-on-bottom > div')
+        // markPeople.waitForExist(5000)
+        const mark = $('div:nth-child(3) > div:nth-child(21) > img')
+        markPeople.dragAndDrop(mark)
+        // browser.pause(3000)
+    })
     
 })
